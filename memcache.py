@@ -1011,7 +1011,7 @@ class Client(local):
         if flags & Client._FLAG_COMPRESSED:
             buf = decompress(buf)
 
-        if  flags == 0 or flags == Client._FLAG_COMPRESSED:
+        if  flags == 0 or flags == 32 or flags == Client._FLAG_COMPRESSED:
             # Either a bare string or a compressed string now decompressed...
             val = buf
         elif flags & Client._FLAG_INTEGER:
